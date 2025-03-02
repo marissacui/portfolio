@@ -117,9 +117,9 @@
 			<h2>Final Visualization Design</h2>
       
 			<figure>
-				<img src="IMAGE_FILENAME" alt="" />
+				<img src="images/final_vis.png" alt="" />
 				<figcaption>
-          BRIEF CAPTION HERE.
+					Final visualization comparing Covid spikes by month. Created with Tableau and Figma.
 				</figcaption>
 			</figure>
 
@@ -128,15 +128,43 @@
 		<section>
 			<h2>Design Process & Design Decisions</h2>
 
+			<h3>Design Critique</h3>
 			<p>
-        DESCRIBE YOUR DESIGN PROCESS AND DECISION DECISIONS HERE.
-      </p>
+				I focused my visualization on identifying Covid surge patterns, which aligned with the primary objective of the article. I did this by:
+			</p>
+			<ul>
+				<li>
+				  <strong>Data smoothing:</strong> Calculated 7-day averages of case counts to eliminate minor fluctuations.
+				</li>
+				<li>
+				  <strong>Inflection point detection:</strong> Identified "peaks" and "valleys" by identifying sign changes in the 7-day average's rate of change, marking transitions between growth and decline. I recognize this is not the most sophisticated measure, this method provided sufficiently clean segmentation.
+				</li>
+				<li>
+				  <strong>Wave delineation:</strong> Visualized these inflection points alongside the daily case data, then visually determined threshold values.
+				</li>
+				<li>
+				  <strong>Comparative visualization:</strong> Plotted a consolidated visualization displaying all four waves on a single graph so that we can directly compare their intensity, duration, and shape.
+				</li>
+			  </ul>
+			<p>
+				My main design choices were:
+			</p>
+			<ul>
+				<li>
+				  Using different colors to show the different waves.
+				</li>
+				<li>
+				  Standardized the waves by aligning each wave at day zero of onset, which allows us to compare progression patterns independent of calendar dates. I implemented monthly interval markers (every 30 days) to provide the reference points that best aligns with the conventional monthly framing used in public health discussions of COVID-19 waves.
+				</li>
+				<li>
+				  Because the time frame was standardized based on wave onset, I labeled each wave with its time frame (e.g. June '20 – Oct '20) to provide additional context.
+				</li>
+			</ul>
 
-      <h3>Reflection</h3>
-
-      <p>
-        WRITE YOUR FINAL REFLECTION HERE.
-      </p>
+			<h3>Reflection</h3>
+			<p>
+				My final design addresses several key critiques I identified in the original spiral visualization, particularly by prioritizing clear comparison of wave patterns and eliminating the interpretive challenges posed by the spiral format. By normalizing the waves to a common starting point and using a standard cartesian graph, I aimed to improve data legibility and focused on the article's primary goal of understanding COVID surge patterns. However, this redesign definitely revealed tradeoffs, like the loss of seasonal context and introducing my own interpretation of a “wave”. The critique-by-redesign approach helped me recognize that no single visualization can perfectly communicate all dimensions of complex data. This process highlighted that effective data visualization often requires prioritizing certain analytical goals over others, and perhaps complementary visualizations may be sometimes necessary.
+			</p>
 		</section>
 	</main>
 </body>
