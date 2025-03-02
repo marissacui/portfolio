@@ -1,0 +1,217 @@
+:root {
+    /* Colors */
+	--color-neutral-95: hsl(220 10% 95%);
+	--color-neutral-90: hsl(220 10% 90%);
+	--color-neutral-80: hsl(220 10% 80%);
+	--color-neutral-70: hsl(220 10% 70%);
+	--color-neutral-60: hsl(220 10% 60%);
+	--color-neutral-50: hsl(220 10% 50%);
+	--color-neutral-40: hsl(220 10% 40%);
+	--color-neutral-30: hsl(220 10% 30%);
+	--color-neutral-20: hsl(220 10% 20%);
+	--color-neutral-10: hsl(220 10% 10%);
+
+    /* purples */
+    --color-purple-95: #e6e6fa;
+    --color-purple-90: #d8bfd8;
+    --color-purple-80: #dda0dd;
+    --color-purple-70: #ee82ee;
+    --color-purple-60: #da70d6;
+    --color-purple-50: #9370db;
+    --color-purple-40: #9932cc;
+    --color-purple-30: #9400d3;
+    --color-purple-20: #8a2be2;
+    --color-purple-10: #4b0082;
+
+    /* Font families */
+    --font-crimson: "Crimson Text", serif;
+    --font-inter: "Inter", serif;
+    
+    /* Font weights */
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    
+    /* Font styles */
+    --style-normal: normal;
+    --style-italic: italic;
+}
+
+html {
+	font: "Crimson Text", serif;
+	counter-reset: figure;
+	background: white;
+	max-width: min(50vw, 80em);
+	margin: 0 auto;
+}
+
+/* Fonts */
+/* Crimson Text utility classes */
+.crimson-text-regular {
+    font-family: var(--font-crimson);
+    font-weight: var(--weight-regular);
+    font-style: var(--style-normal);
+  }
+  
+  .crimson-text-semibold {
+    font-family: var(--font-crimson);
+    font-weight: var(--weight-semibold);
+    font-style: var(--style-normal);
+  }
+  
+  .crimson-text-regular-italic {
+    font-family: var(--font-crimson);
+    font-weight: var(--weight-regular);
+    font-style: var(--style-italic);
+  }
+  
+  .crimson-text-semibold-italic {
+    font-family: var(--font-crimson);
+    font-weight: var(--weight-semibold);
+    font-style: var(--style-italic);
+  }
+  
+  /* Inter Text utility classes */
+  .inter-text-regular {
+    font-family: var(--font-inter);
+    font-optical-sizing: var(--optical-sizing-auto);
+    font-weight: var(--weight-regular);
+    font-style: var(--style-normal);
+  }
+  
+  .inter-text-medium {
+    font-family: var(--font-inter);
+    font-optical-sizing: var(--optical-sizing-auto);
+    font-weight: var(--weight-medium);
+    font-style: var(--style-normal);
+  }
+  
+  .inter-text-bold {
+    font-family: var(--font-inter);
+    font-optical-sizing: var(--optical-sizing-auto);
+    font-weight: var(--weight-bold);
+    font-style: var(--style-normal);
+  }
+  
+
+/* Headings */
+
+h1, h2, h3 {
+    font-family: var(--font-crimson);
+    font-weight: var(--weight-regular);
+	line-height: 1.1;
+	text-wrap: balance;
+}
+
+h4, h5, h6 {
+    font-family: var(--font-inter);
+    font-weight: var(--weight-semibold);
+	line-height: 1.1;
+	text-wrap: balance;
+}
+
+h1, h2 {
+	padding-bottom: .2em;
+}
+
+h1 {
+	margin-block: 1em .5rem;
+	font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+	font-weight: 800;
+
+	small {
+		display: block;
+		width: fit-content;
+		padding: .5em .5em;
+		margin-inline: auto;
+        margin-bottom: 2%;
+		color: var(--color-purple-40);
+        background-color: var(--color-purple-95);
+		font-size: 25%;
+        border-radius: 6px;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+}
+
+h2 {
+	font-size: 220%;
+    border-bottom: 1px solid var(--color-neutral-70);
+}
+
+h3 {
+	font-size: 150%;
+    margin-top: 1.5em;
+}
+
+/* Lists */
+
+ul, ol {
+	padding-inline-start: 2em;
+    font-family: var(--font-inter);
+}
+
+li {
+    line-height: 1.3em;
+
+	&::marker {
+		color: var(--color-purple-30);
+	}
+
+	+ li {
+		margin-top: .5em;
+	};
+}
+
+/* Sectioning elements */
+
+header {
+	padding-block: 1em;
+	text-align: center;
+}
+
+main {
+	background: white;
+	color: var(--color-neutral-20);
+	border-radius: 1rem;
+}
+
+p {
+    font-family: var(--font-inter);
+    line-height: 1.3em;
+}
+
+/* Figures */
+
+figure {
+    max-width: 100%;
+	margin-inline: -.5em;
+    margin-top: 4rem;
+	text-align: center;
+	background: white;
+
+	> figcaption {
+		font: 500 75% var(--font-sans);
+		background: var(--color-neutral-95);
+		padding: .5rem;
+		counter-increment: figure;
+		text-align: left;
+
+		&::before {
+			content: "Figure " counter(figure) ": ";
+			font-weight: bold;
+			color: var(--color-neutral-40);
+		}
+
+		a:not(:hover, :focus, :active) {
+			color: inherit;
+			text-decoration: underline;
+			text-decoration-color: color-mix(in lab, currentColor, transparent 70%);
+		}
+	}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
