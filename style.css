@@ -1,27 +1,27 @@
 :root {
     /* Colors */
-	--color-neutral-95: hsl(220 10% 95%);
-	--color-neutral-90: hsl(220 10% 90%);
-	--color-neutral-80: hsl(220 10% 80%);
-	--color-neutral-70: hsl(220 10% 70%);
-	--color-neutral-60: hsl(220 10% 60%);
-	--color-neutral-50: hsl(220 10% 50%);
-	--color-neutral-40: hsl(220 10% 40%);
-	--color-neutral-30: hsl(220 10% 30%);
-	--color-neutral-20: hsl(220 10% 20%);
-	--color-neutral-10: hsl(220 10% 10%);
+	--color-neutral-95: oklch(95% 0.005 250);
+	--color-neutral-90: oklch(90% 0.01 250);
+	--color-neutral-80: oklch(80% 0.015 250);
+	--color-neutral-70: oklch(70% 0.02 250);
+	--color-neutral-60: oklch(60% 0.025 250);
+	--color-neutral-50: oklch(50% 0.03 250);
+	--color-neutral-40: oklch(40% 0.035 250);
+	--color-neutral-30: oklch(30% 0.035 250);
+	--color-neutral-20: oklch(20% 0.03 250);
+	--color-neutral-10: oklch(10% 0.02 250);
 
-    /* purples */
-	--color-blue-95: #e6f2ff;
-	--color-blue-90: #cce5ff;
-	--color-blue-80: #99cbff;
-	--color-blue-70: #66b0ff;
-	--color-blue-60: #3396ff;
-	--color-blue-50: #007bff;
-	--color-blue-40: #0062cc;
-	--color-blue-30: #004999;
-	--color-blue-20: #003066;
-	--color-blue-10: #001833;
+    /* blues */
+	--color-blue-95: oklch(96% 0.03 240);
+	--color-blue-90: oklch(92% 0.06 240);
+	--color-blue-80: oklch(84% 0.12 240);
+	--color-blue-70: oklch(75% 0.18 240);
+	--color-blue-60: oklch(66% 0.22 250);
+	--color-blue-50: oklch(62% 0.24 250);
+	--color-blue-40: oklch(50% 0.22 250);
+	--color-blue-30: oklch(40% 0.18 250);
+	--color-blue-20: oklch(30% 0.14 250);
+	--color-blue-10: oklch(20% 0.08 250);
 
     /* Font families */
     --font-crimson: "Crimson Text", serif;
@@ -41,7 +41,6 @@
 html {
 	font: "Crimson Text", serif;
 	counter-reset: figure;
-	background: white;
 	max-width: min(50vw, 80em);
 	margin: 0 auto;
 }
@@ -93,7 +92,19 @@ html {
     font-weight: var(--weight-bold);
     font-style: var(--style-normal);
   }
-  
+
+/* Mode Switcher */
+
+.color-scheme {
+	font-family: var(--font-inter);
+	font-size: .85em;
+	position: absolute;
+	display: inline-flex;
+	top: 1em;
+	right: 1em;
+	gap: .5em;
+	cursor: pointer;
+}
 
 /* Headings */
 
@@ -172,9 +183,6 @@ header {
 }
 
 main {
-	background: white;
-	color: var(--color-neutral-20);
-	border-radius: 1rem;
 	padding: 5rem 2rem;
 }
 
@@ -197,6 +205,11 @@ a {
 	font-family: var(--font-inter);
 	color: var(--color-blue-40);
 	text-decoration: none;
+}
+
+.current {
+	color: var(--color-blue-20);
+	font-weight: 600;
 }
 
 /* Figures */
